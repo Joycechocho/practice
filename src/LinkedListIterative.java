@@ -15,7 +15,20 @@ public class LinkedListIterative extends LinkedList
       }
 
       return count;
+    }
 
+    /* Write a function that searches a given key ‘x’ in a given singly linked list.
+    The function should return true if x is present in linked list and false otherwise.*/
+    public boolean hasElement(int x)
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+            if(temp.data == x) return true;
+            temp = temp.next;
+        }
+
+        return false;
     }
 
     public static void main(String[] args)
@@ -28,6 +41,7 @@ public class LinkedListIterative extends LinkedList
         list.push(1);
 
         System.out.println(list.count());
+        System.out.println(list.hasElement(1));
 
     }
 
