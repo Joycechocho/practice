@@ -48,4 +48,16 @@ public class BinarySearchTree {
         printInorder(node.right);
     }
 
+    public int minValue(Node root)
+    {
+        int value = root.key;
+        while(root.left != null)
+        {
+            value = root.left.key;
+            root = root.left;
+        }
+
+        return value;
+    }
+
 }
