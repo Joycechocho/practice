@@ -27,6 +27,29 @@ public class LinkedListDeleting extends LinkedList
 		prev.next = temp.next;
 	}
 
+	/* Given a singly linked list and a position, delete a linked list node at the given position. */
+    public void deleteAtGivenPosition(int position)
+    {
+        Node temp = head;
+        Node prev = null;
+
+        /* If head needs to be removed */
+        if (position ==  0)
+        {
+            head = temp.next;
+            return;
+        }
+
+        for (int i = 0; i < position && temp != null; i++)
+        {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        if(prev.next == null || temp == null) return;
+
+        prev.next = temp.next;
+    }
 
 
 	public static void main(String[] args)
@@ -40,7 +63,8 @@ public class LinkedListDeleting extends LinkedList
 		list.push(8);
 
 
-		list.deleteNode(5);
+//		list.deleteNode(5);
+		list.deleteAtGivenPosition(3);
 		
 		list.printList();
 	}
