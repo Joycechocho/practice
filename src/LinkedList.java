@@ -1,5 +1,4 @@
 public class LinkedList {
-    static class LinkedList {
 
         Node head;
 
@@ -33,5 +32,4 @@ public class LinkedList {
 
             list.printList();
         }
-    }
 }
